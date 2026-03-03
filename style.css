@@ -1,0 +1,156 @@
+/* style.css — Tall Man Training Design Tokens + Components */
+
+/* ============================================
+   FONTS: Barlow Condensed (display) + Inter (body/UI)
+   ============================================ */
+
+/* ============================================
+   TYPE SCALE
+   ============================================ */
+:root {
+  --text-xs:   clamp(0.75rem,  0.7rem  + 0.25vw, 0.875rem);
+  --text-sm:   clamp(0.875rem, 0.8rem  + 0.35vw, 1rem);
+  --text-base: clamp(1rem,     0.9rem  + 0.5vw,  1.125rem);
+  --text-lg:   clamp(1.125rem, 0.95rem + 0.85vw, 1.5rem);
+  --text-xl:   clamp(1.5rem,   1rem    + 1.5vw,  2.25rem);
+  --text-2xl:  clamp(2rem,     1.2rem  + 2.5vw,  3.5rem);
+  --text-3xl:  clamp(2.5rem,   1rem    + 4vw,    5rem);
+
+  /* ============================================
+     SPACING (4px system)
+     ============================================ */
+  --space-1:  0.25rem;
+  --space-2:  0.5rem;
+  --space-3:  0.75rem;
+  --space-4:  1rem;
+  --space-5:  1.25rem;
+  --space-6:  1.5rem;
+  --space-8:  2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+
+  /* ============================================
+     FONT FAMILIES
+     ============================================ */
+  --font-display: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+  --font-body: 'Inter', 'Helvetica Neue', sans-serif;
+
+  /* ============================================
+     RADIUS
+     ============================================ */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-full: 9999px;
+
+  /* ============================================
+     TRANSITIONS
+     ============================================ */
+  --transition-interactive: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* ============================================
+     CONTENT WIDTHS
+     ============================================ */
+  --content-narrow: 640px;
+  --content-default: 960px;
+  --content-wide: 1200px;
+}
+
+/* ============================================
+   DARK PALETTE — gym-focused, always dark
+   Custom palette: #0d0d0d bg, crimson accent
+   ============================================ */
+:root, [data-theme="dark"] {
+  --color-bg:             #0d0d0d;
+  --color-surface:        #141414;
+  --color-surface-2:      #1a1a1a;
+  --color-surface-offset: #1e1e1e;
+  --color-surface-offset-2: #242424;
+  --color-surface-dynamic: #2a2a2a;
+  --color-divider:        #2e2e2e;
+  --color-border:         #363636;
+
+  --color-text:           #f0f0f0;
+  --color-text-muted:     #888888;
+  --color-text-faint:     #555555;
+  --color-text-inverse:   #0d0d0d;
+
+  /* Primary — Crimson Red */
+  --color-primary:        #c0392b;
+  --color-primary-hover:  #d44637;
+  --color-primary-active: #a63125;
+  --color-primary-highlight: #2a1a18;
+
+  /* Success — Logged exercise green */
+  --color-success:        #27ae60;
+  --color-success-hover:  #2ecc71;
+  --color-success-active: #1e8449;
+  --color-success-highlight: #1a2a1e;
+
+  /* Superset — warm orange */
+  --color-superset:       #e67e22;
+  --color-superset-hover: #f39c12;
+  --color-superset-active:#d35400;
+  --color-superset-highlight: #2a2218;
+
+  /* Warning */
+  --color-warning:        #f39c12;
+  --color-warning-hover:  #f1c40f;
+  --color-warning-active: #d4860b;
+
+  /* Error */
+  --color-error:          #e74c3c;
+  --color-error-hover:    #c0392b;
+
+  /* Shadows — deep dark */
+  --shadow-sm: 0 1px 2px oklch(0 0 0 / 0.3);
+  --shadow-md: 0 4px 12px oklch(0 0 0 / 0.4);
+  --shadow-lg: 0 12px 32px oklch(0 0 0 / 0.5);
+}
+
+/* Light mode variant for toggle compliance */
+[data-theme="light"] {
+  --color-bg:             #f5f5f5;
+  --color-surface:        #ffffff;
+  --color-surface-2:      #fafafa;
+  --color-surface-offset: #eeeeee;
+  --color-surface-offset-2: #e8e8e8;
+  --color-surface-dynamic: #e0e0e0;
+  --color-divider:        #d4d4d4;
+  --color-border:         #c0c0c0;
+
+  --color-text:           #1a1a1a;
+  --color-text-muted:     #666666;
+  --color-text-faint:     #999999;
+  --color-text-inverse:   #f0f0f0;
+
+  --color-primary:        #b5342a;
+  --color-primary-hover:  #c0392b;
+  --color-primary-active: #962c23;
+  --color-primary-highlight: #f5e0de;
+
+  --color-success:        #1e8449;
+  --color-success-hover:  #27ae60;
+  --color-success-active: #196f3d;
+  --color-success-highlight: #d5f5e3;
+
+  --color-superset:       #d4700a;
+  --color-superset-hover: #e67e22;
+  --color-superset-active:#b8600a;
+  --color-superset-highlight: #fdebd0;
+
+  --color-warning:        #d4860b;
+  --color-warning-hover:  #f39c12;
+  --color-warning-active: #b8750a;
+
+  --color-error:          #c0392b;
+  --color-error-hover:    #e74c3c;
+
+  --shadow-sm: 0 1px 2px oklch(0.2 0.01 80 / 0.08);
+  --shadow-md: 0 4px 12px oklch(0.2 0.01 80 / 0.1);
+  --shadow-lg: 0 12px 32px oklch(0.2 0.01 80 / 0.14);
+}
